@@ -23,7 +23,7 @@ class VinylController
         }else{
             $title = 'All';
         }
-        
+
         return new Response($title);
     }
 }
