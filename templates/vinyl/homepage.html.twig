@@ -1,0 +1,15 @@
+<h1>{{ title }}</h1>
+
+{# TODO: add image of a record #}
+
+<div>
+    Tracks
+
+    <ul>
+        {% for track in tracks %}
+            <li>
+                {{ track.song }} - {{ track.artist }}
+            </li>
+        {% endfor %}
+    </ul>
+</div>
