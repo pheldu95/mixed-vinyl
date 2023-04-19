@@ -21,6 +21,9 @@ class VinylController extends AbstractController
             ['song' => 'Fantasy', 'artist' => 'Mariah Carey'],
         ];
 
+        #this came with our debugging package we installed.
+        #dd($tracks);
+
         //render returns a Response object. controllers must always return a response object
         return $this->render('vinyl/homepage.html.twig',[
             'title' => 'PB and Jams',
