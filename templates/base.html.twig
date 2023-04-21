@@ -29,7 +29,8 @@
         <!-- Main Navigation -->
         <nav class="navbar navbar-expand-lg navbar-dark  mb-5" style="background-color: #27333A;">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">
+{#                pass the route name that we gave the route in VinylController#}
+                <a class="navbar-brand" href="{{ path('app_homepage') }}">
                     <i class="fas fa-record-vinyl"></i>
                     Mixed Vinyl
                 </a>
@@ -39,7 +40,7 @@
                 <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNavDropdown">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" style="margin-top: 20px;" href="#">Browse Mixes</a>
+                            <a class="nav-link" style="margin-top: 20px;" href="{{ path('app_browse') }}">Browse Mixes</a>
                         </li>
                         <!-- Not Authenticated -->
                             <!-- <li class="nav-item"><button href="#" class="btn btn-primary btn-sm">Login</button></li> -->
