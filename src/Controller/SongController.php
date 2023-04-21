@@ -8,8 +8,11 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class SongController extends AbstractController
 {
-    #[Route('/api/songs/{id}')]
-    public function getSong($id): Response
+//    methods: ['GET'] makes it so this route only accepts a GET request
+//    using regex to make sure we get an integer not a string. for the song id in the url
+//      this will throw a 404 error if someone tries to go to /api/songs/apple for example
+    #[Route('/api/songs/{id<\d+>}', methods: ['GET'])]
+    public function getSong(int $id): Response
     {
         // TODO query the database
         $song = [
