@@ -33,12 +33,16 @@
             </svg>
         </div>
         <div class="col-12 col-md-8 ps-5">
-            <div {{ stimulus_controller('hello') }}></div>
             <h2 class="mb-4">10 songs (30 minutes of 60 still available)</h2>
             {% for track in tracks %}
-            <div class="song-list">
+{#           api_songs_get_one is the name we gave the route in SongController
+            loop.index we are using to fake having a database id for the song. loop.index is the forloop index for this twig for loop
+#}
+            <div class="song-list" {{ stimulus_controller('song-controls', {
+                infoUrl: path('api_songs_get_one', { id: loop.index })
+            }) }}>
                 <div class="d-flex mb-3">
-                    <a href="#">
+                    <a href="#" {{ stimulus_action('song-controls', 'play') }}>
                         <i class="fas fa-play me-3"></i>
                     </a>
                     <span class="song-details">{{ track.song}} - {{ track.artist }}</span>
