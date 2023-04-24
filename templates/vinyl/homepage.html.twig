@@ -33,6 +33,7 @@
             </svg>
         </div>
         <div class="col-12 col-md-8 ps-5">
+            <div {{ stimulus_controller('hello') }}></div>
             <h2 class="mb-4">10 songs (30 minutes of 60 still available)</h2>
             {% for track in tracks %}
             <div class="song-list">
